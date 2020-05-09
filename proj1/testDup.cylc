@@ -1,0 +1,8 @@
+dup
+#t
+dup
+print
+drop
+print
+drop
+print

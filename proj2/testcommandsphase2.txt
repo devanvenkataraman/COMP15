@@ -1,0 +1,26 @@
+list
+dist a b
+dist NY-Ithaca-ES b
+dist a MA-Wayland-JC
+dist MD-Columbia-DM NC-Raleigh-CP
+dist CA-Palo-Alto-KM MA-Medford-PM
+dist NY-Greenville-ZG ME-Raymond-LW
+dist RI-Pawtucket-RG MD-Columbia-DM
+dist NY-Lake-Placid-LZ TX-Houston-CRC
+dist NY-Greenville-ZG AZ-Phoenix-EH
+dist
+TX-Houston-CRC
+AZ-Phoenix-EH
+invalid_command
+path invalid_city NJ-New-Providence-LC 1
+path CT-Guilford-MC invalid_city 2
+path CA-San-Francisco-AJ CA-Palo-Alto-KM 1
+path CA-Palo-Alto-KM MA-Arlington-MG 1
+path NY-Greenville-ZG NY-New-Rochelle-SBP 3
+path MD-Columbia-DM MA-Medford-PM 2
+path CT-Guilford-MC NY-Greenville-ZG 4
+path NY-Lake-Placid-LZ CA-San-Francisco-AJ 6
+path NY-Greenville-ZG WA-Seattle-JL 10
+path MA-Medford-PM NY-Greenville-ZG 30
+path NY-Buffalo-MI CO-Denver-JD 100
+quit

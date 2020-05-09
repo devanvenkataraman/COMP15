@@ -1,0 +1,10 @@
+not % should throw empty exception
+4
+not % should throw not bool exception
+#t
+not
+print
+drop
+#f
+not
+print % test two normal cases

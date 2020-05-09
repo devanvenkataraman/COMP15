@@ -1,0 +1,93 @@
+/**********************************************************
+* HW4: BinarySearchTree
+* Comp 15
+* README
+* Author: Devan Venkataraman
+*********************************************************/
+
+Compile/run:
+     - Compile using
+            make hw4
+     - run executable with
+            ./hw4
+
+     - NOTE ON SUBMISSION:
+        the autograder did not like that my test driver was used because
+        it did not match output with the reference program, which is obvious.
+        So, I left the makefile to use the hw4.cpp file and the makefile
+        will need to be edited to use my test file
+
+
+Program Purpose:
+
+This homework assignment was to design a binary search tree, with the added
+functionality of supporting multiplicity. In the BST, we handle standard insert
+and remove functionalities, as well as contains and some statistics about
+the number of nodes, tree height, min and max values and total count in the tree
+
+Acknowledgements:
+
+I heavily relied on my notes from class about binary search trees throughout
+the whole assignment. We worked through several examples of recursive BST
+problems and ways to perform different traversals that proved very helpful
+in writing my functions. I attended office hours to ask about a memory leak
+issue with my copy constructor and assignment operator but I had to leave
+before receiving help. I still haven't been able to resolve the issue.
+
+Files:
+
+BinarySearchTree.cpp
+     Implementation of the BinarySearchTree class. Behaves like a standard BST
+     except supports multiplicity. This means that if you insert the same
+     number multiple times then remove it, it will still be in the tree. Each
+     node has both a data value and a count value to support this functionality.
+     Supports insert, remove, contains (a search), min/max value, # of nodes,
+     total count, tree height.
+
+BinarySearchTree.h
+     Interface of the BinarySearchTree class described above. Includes both
+     public and private versions of several functions for abstraction. All
+     data members private.
+
+hw4.cpp
+    The provided driver for the BinarySearchTree class. This driver was used
+    with the reference program, the_hw4, so I was able to diff test it with
+    my own program. However, it doesn't test all of the functions and
+    definitely not edge cases so this could not be the extent of testing.
+
+testBinarySearchTree.cpp
+    The test file (and driver I used) for the BinarySearchTree class. This
+    file more thoroughly tests the BST class with more cases and edge cases
+    across all functionalities. The specifics of the testing is described
+    below in the testing function.
+
+Data Structures:
+
+    The data structure used was a Binary Search Tree because the assignment
+    was to create a Binary Search Tree. Binary Search Trees are a useful
+    data structure because they enable binary search. If the BST is
+    self-balancing, this can be done in O(logn) time complexity. It is more
+    efficient for insertion and deletion because while a sorted array requires
+    many elements to be moved, binary search trees only require certain chunks
+    of memory to be linked together. In Big O terms, a BST has a constant
+    time complexity for insertion / deletion while a sorted array has O(n).
+
+
+
+Testing:
+    I initially tested the program using the provided hw4.cpp file. The
+    reason for this was that it was used with the reference program, so
+    I could perform a diff test and confirm that the basics and print format
+    of my program was correct. I then moved to a test file,
+    testBinarySearchTree.cpp, for further testing. Here, I started by testing
+    the functionality of the copy constructor and assignment operator. I then
+    created three trees, one empty, one with 1 node, and one with several
+    nodes that I would use in all tests. This ensured that I tested against
+    edge cases for each function. The test_insert function simply prints
+    each of the trees to ensure that the nodes were inserted correctly. The
+    test_contains function tests working and not working cases for all three
+    trees. Finally, the test_remove function tries to remove from an empty
+    tree, removes not successfully then successfully from the 1 node tree,
+    then for the multi-node tree cycles through all values in the range of nodes
+    and removes them, ensuring that the remove works in all cases. A 2 is left
+    at the end because there were two 2's in the tree originally.

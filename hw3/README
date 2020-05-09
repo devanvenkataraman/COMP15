@@ -1,0 +1,92 @@
+/**********************************************************
+* HW3: Metro Simulator
+* Comp 15
+* README
+* Author: Devan Venkataraman
+*********************************************************/
+
+Compile/run:
+     - Compile using
+            make MetroSim
+     - run executable with
+            ./MetroSim stationsFile passFile [commands]
+
+
+Program Purpose:
+
+This homework assignment handles a running train to accommodate
+passengers arriving/departing a metro. Learn how to design and
+modularize code and work with documented libraries.
+
+Acknowledgements:
+
+I consulted online sites on several occasions to remind myself about the
+various std::vector functions available to me. I also had to look up how
+to initialize a vector to a certain size, which was needed for the train.
+I also talked through potential data structures (on paper no code)
+with two students and then checked these with TAs before beginning to
+ensure that I was on track.
+
+Files:
+
+main.cpp:
+     Short, initiates game depending on whether it is a command file
+     game or a user inputted game.
+
+MetroSim.cpp:
+     Implementation of MetroSim class.  Main functionality is
+     triggering queries, specifics of which are done in MetroLine.cpp.
+     Includes functions that trigger MetroLine functions to board train,
+     add passengers, etc.
+
+MetroSim.h:
+    Interface of MetroSim class.
+
+MetroLine.cpp:
+    Implementation of the MetroLine class. Handles specifics of moving
+    train, adding and removing passengers. Includes functions to read
+    in the stations from the text file, print the stations (including
+    where the train is), move, board and unload the train, add a
+    passenger, and print the departing passenger to the outfile.
+
+
+MetroLine.h
+    Interface of the MetroLine class.
+
+stations.txt:
+    an example file containing a list of stations.
+
+test_commands.txt:
+    sample list of commands that you could give to the simulator
+
+the_metroSim:
+    reference implementation for students to see how the metro works
+
+
+Note:  the program should handle all cases.
+
+Data Structures:
+
+    The train itself is stored as a vector of PassengerQueues. Although it
+    may seem only necessary to use a vector of Passengers, using queues
+    allows us to insert easily in the order that the specs asks us to, which
+    is according to the destination rather than the chronology of adding.
+    This is a great example of using modularity to allow the code to work
+    for us, instead of writing a manual sort function. The stations are stored
+    as a vector of station structs, that is not modified after initially
+    populating. Each station struct consists of a name, an id, and a
+    PassengerQueue for the passengers at it waiting to board. Main triggers
+    an instance of MetroSim, which has a private member that is a MetroLine
+    object. The code generally follows this funneling, with more specific
+    tasks being dealt with further on.
+
+Testing:
+
+I tested much of the program manually by user inputting commands and comparing
+how my program handled them with how the demo did. This form of testing was
+quite similar to the style of testing we used in COMP11. This included Testing
+edge cases, passengers at the beginning and end of the stations, multiple
+passengers, etc. I also diff tested with the specified outfile. I then
+created stations files of different sizes to ensure that it worked for metro's
+of all sizes. I also created a second commands file to ensure that it worked
+for other specified command files.

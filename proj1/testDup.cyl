@@ -1,0 +1,8 @@
+dup % should throw empty exception
+#t
+dup
+print % should print #t
+drop
+print % should print #t again
+drop
+print % should throw empty exception

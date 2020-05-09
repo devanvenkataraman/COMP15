@@ -1,0 +1,35 @@
+/**********************************************************
+* Lab 6
+* Comp 15
+* README
+* Author: Devan Venkataraman
+*********************************************************/
+
+Compile/run:
+     - Compile using
+            make tree_traversal
+     - run executable with
+            ./tree_traversal
+
+Program Purpose:
+
+Execute in-order, pre-order, and level-order printing on a BST
+
+Acknowledgements:
+
+I asked the TA why I was getting a segfault. It was a slight error in
+my while loop condition.
+
+Files:
+
+BSTree.cpp
+    Implementation of the BSTree class
+
+BSTree.h
+    Interface of the BSTree class
+
+main.cpp
+    Houses test functions
+
+Testing:
+    Simply tested against the provided "answer key" for each order method.

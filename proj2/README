@@ -1,0 +1,116 @@
+/**********************************************************
+* Proj2
+* Comp 15
+* README
+* Author: Devan Venkataraman
+*********************************************************/
+
+Compile/run:
+     - Compile using
+            make findpath
+     - run executable with
+            ./findpath vertex_data edge_data
+
+Program Purpose:
+    Phase 1 of this project is to create a program that supports the list,
+    dist, and quit commands as outlined by the specs. This involved being able
+    to correctly read in vdat files, and storing the data as vertices in the
+    graph. However, it did not require any edges and thus my program cannot
+    read in and process adat files at the moment. My plan for the adat files
+    is to use an adjacency list rather than array, however that may change as
+    I work out how I will implement edges.
+
+    Phase 2 is to complete the program, mainly supporting the path command.
+    This involved successfully traversing a graph and finding a provided
+    number of paths between provided vertices.
+
+Acknowledgements:
+    I actually required few resources on phase 1 of this project, as I had a
+    decent understanding of graphs from lectures and the code itself was not
+    too complicated. I did, however, need to look up things like how to cut off
+    a number at two decimals, and how some C++ mechanics work handling ints and
+    doubles at the same time.
+
+    On phase 2, I had to lean much more heavily on my notes of graphs and
+    traversals. I struggled a lot with traversing the graph through a DFS
+    and so had to use two tokens. I leaned on the CampusWire posts at lot
+    as they had helpful tips for high-level strategies and issues that
+    students were running into.
+
+Files:
+
+findpath.cpp
+    Main driver for findpath. Ensures that the user has provided the correct
+    arguments, then initializes the graph. fields commands from cin.
+
+graph.h
+    Interface of the graph class. Includes constructor, and two public functions
+    to support two queries: list and dist. All other functions are private,
+    which read files, populate the data, and also a helper function when
+    calculating coordinates. The data stored are the number of vertices and
+    a vector of vertices (Vertex structs). In the next week, I will need to
+    store edges by adding an adjacency list or array.
+    NOTE: during testing with the testGraph.cpp class, the vector of vertices
+    were temporarily made public to access in test functions. Returned to
+    private after.
+
+graph.cpp
+    Implementation of the Graph class with the functions described above.
+
+vertex.h
+    Houses the Vertex struct that is used by the Graph class. Vertex includes
+    a string for its name, a Location object, and a vector of other Vertices
+    that WILL store its neighbors (adjacency list). This vector is unused at
+    the moment and is subject to change in the next week.
+
+testGraph.cpp
+    Test driver for Graph class. Described in detail below.
+
+testcommandsphase1.txt
+    Test command file for Graph class. Described in detail below.
+
+testcommandsphase2.txt
+    Test command file for Graph class. Described in detail below.
+
+Data Structures:
+    Phase 1:
+    The data structure utilized in the assignment is (will be) a directed,
+    unweighted graph. It is currently not actually a graph, as there are no
+    edges stored. However, it has the fundamental structure of a graph,
+    storing a vector of vertices. Graphs are highly useful in real world
+    applications and are often used to express data where relationships between
+    data points hold some value, like Facebook users being friends. Graph
+    functions usually face linear Big O complexity, such as with a search.
+
+    Phase 2:
+    The data structure is now a directed graph (still unweighted)! The edges
+    are stored in an adjacency list (specifically a vector of vertices in the
+    Vertex struct. I also used two auxiliary data structures in my solution:
+    first a vector of integers that represented the current path. Each value
+    in the vector corresponded to the index in the main Graph vector that the
+    city was found in, and was in the order that the path followed. The second
+    structure was a vector of vector ints, which held all of the paths found.
+    I also could've used a queue for this, but I chose to use a vector in case
+    I needed to utilize any of the unique vector functions further down the road.
+
+Testing:
+    Testing for phase 1 took two forms. First, I created a test file called
+    testGraph.cpp. This first tested Graph setup with both valid and invalid
+    files. Next it tested list function. Lastly, it tested dist function
+    100 times from the TA data file by using nested loops. To test further,
+    I created a commands file called testcommandsphase1.txt to diff test, as
+    we were given a reference program. In this command file, I first tested
+    list. Then I tested dist with invalid file names, then several valid
+    dist commands. Finally, I tested an invalid command and quit. This commands
+    file passed a diff test with the reference program.
+
+    Testing for phase 2 utilized the text file testcommandsphase2.txt in tandem
+    with the ta data files that were provided. This file was initially copied
+    over from the phase 1 version, to ensure that none of my new work messed
+    up any of the previous functionalities. Then, the main job was to test the
+    path command. First, I tested to make sure it handled cases of invalid
+    user-provided cities correctly. Then, I ensured that it worked when a path
+    between two cities could not be found. Lastly, it ran several path commands
+    with randomly selected cities and sizes. I increased the number of paths
+    up to 100 to ensure that it still worked with a very high number of paths.
+    I am not aware of any bugs in the program.

@@ -1,0 +1,9 @@
+swap % should throw empty exception
+4
+swap % should still throw empty exception
+5
+swap
+print % should print 4
+drop
+drop
+print % should throw empty exception

@@ -1,0 +1,7 @@
+I'm doing this lab in order to avoid bad things that might happen if I don't do it.
+
+Universal polymorphism prevents tons of code being rewritten. This is
+helpful for this case because we would have two nearly identical classes
+that are only differentiated by variable types. Through polymorphism,
+we can implement the same class for different situations, such as with
+integers and dogs.

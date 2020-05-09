@@ -1,0 +1,8 @@
+print % Should throw error
+#t
+#f
+print
+drop
+print
+drop
+print % Should throw error

@@ -1,0 +1,9 @@
+4
+6
+print
+{ quit } % make sure program can bounce between fieldQuery functions
+         % and pass the quit command throughout file to istream to cin to end
+exec
+{ 8 }    % shouldn't run because quit command
+exec
+print

@@ -1,0 +1,12 @@
+% test basic operations with ints
+4
+5
++
+4
+-
+6
+*
+5
+mod
+drop
+print % should throw empty exception

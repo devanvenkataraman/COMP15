@@ -1,0 +1,6 @@
+clear
+4
+5
+6
+clear
+print % should throw empty exception

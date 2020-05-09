@@ -1,0 +1,71 @@
+
+A. TITLE + AUTHOR:
+
+COMP 15 HW 1 Cheshire ConCATenation - no strings attached
+Author: Devan Venkataraman
+
+B. PURPOSE
+
+The purpose of this program is to create a character array list class
+that supports a wide variety of functions that resembles the array list
+built into c++. These functions are meant to support the client and
+also report errors in their usage.
+
+C. ACKNOWLEDGEMENTS
+
+In this assignment, I consulted TA's at office hours mainly to troubleshoot
+valgrind errors, which ultimately I discovered to be related to a small
+over-iteration issue in my print function. I also consulted my COMP 11
+homework assignments as a reminder of class syntax and re-familiarize
+myself with some general OOP principles. I consulted an online resource
+to nail down the purpose of copy constructors vs. assignment operators
+but this was ultimately explained in Monday's lecture.
+
+D. FILES
+
+CharArrayList.h - Interface of the CharArrayList Class
+
+CharArrayList.cpp - Implementation of the CharArrayList Class. Includes
+4 total constructors, destructor, assignment operation, and the rest of
+the assignment-outlined functions that manipulate the CharArrayList.
+Also includes 3 private member functions: resize, expand, and getChar.
+
+testCharArrayList.cpp - Test code for the CharArrayList class. includes
+tests for all public member functions. Those functions with exceptions
+and / or possible edge cases are tested against appropriately and
+described more in depth in the testing section below.
+
+E. COMPILE / RUN
+
+The program is compiled by including the CharArrayList.cpp file. The
+testCharArrayList.cpp file may also be included if the user would like
+to test any of the functions. The program takes no user input.
+
+F. DATA STRUCTURES
+
+The data structure is an array list, made to be modified during the
+program, unlike a normal array. It has the advantage of having several
+functions that can manipulate the list. It's disadvantages include
+quitting upon an error in its usage and any limitations to its
+functional abilities.
+
+G. TESTING
+
+The testing was broken into two groups as to limit the length of the
+main function in the testCharArrayList.cpp file. The first group tests
+both cases of the isEmpty function, first and last functions as used
+normally and when triggering their runtime_error exceptions, elementAt
+as used normally and its out_of_range exception, and both the pushAtBack
+and pushAtFront functions.
+
+The second function test group tests the insertAt function inserting
+an element into the middle of the array, at the end, and triggering its
+exception. It tests the insertInOrder function both with insertions
+into the middle and end of the array as well. It tests popFromFront and
+popFromBack with both normal cases and triggering their runtime_error
+exceptions. It tests the removeAt and replaceAt functions both normally
+and with their respective out_of_range exceptions. It tests concatenate
+by concatenating a standard array to an empty array, an empty array to
+a standard array, an array to itself, and a case where an expansion is
+needed. Finally it tests shrink to shorten the array to the minimum
+capacity necessary.

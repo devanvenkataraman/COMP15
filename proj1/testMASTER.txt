@@ -1,0 +1,26 @@
+{ testPushBool.cylc }
+file
+{ testNot.cylc }
+file
+{ testClear.cylc }
+file
+{ testDrop.cylc }
+file
+{ testDup.cylc }
+file
+{ testSwap.cylc }
+file
+{ testOperate.cylc }
+file
+{ testComparison.cylc }
+file
+{ testExec.cylc }
+file
+{ testIf.cylc }
+file
+clear
+file                    % Never directly tested file functionality besides here,
+{ doesntExist.cylc }    % so make sure file command with no file name and
+file                    % with invalid file name are handled correctly.
+{ testQuit.cylc }       % Have to test quit last because it quits.
+file

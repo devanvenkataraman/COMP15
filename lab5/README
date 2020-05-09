@@ -1,0 +1,28 @@
+/**********************************************************
+* Lab 5: makingMake
+* Comp 15 Fall 2019
+* README
+* Author: Devan Venkataraman
+*********************************************************/
+
+Program Purpose: This lab assignment is to learn about makefiles. We
+wrote in the necessary dependencies and targets in order to link the
+files.
+
+Acknowledgements: Asked TAs if we need a README. Here we are.
+
+Run command: Run executable with "./evil"
+
+Files:
+
+evil.cpp: initiates the evil program.
+
+roster.h: Interface of the roster class. Includes 3 data members and 5 private
+editing functions.
+
+roster.cpp: Implementation of the roster class.
+
+Student.h: Student struct, includes name and grade.
+
+Testing:
+No testing, we did not write or edit the program.

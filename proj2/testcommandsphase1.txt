@@ -1,0 +1,15 @@
+list
+dist a b
+dist NY-Ithaca-ES b
+dist a MA-Wayland-JC
+dist MD-Columbia-DM NC-Raleigh-CP
+dist CA-Palo-Alto-KM MA-Medford-PM
+dist NY-Greenville-ZG ME-Raymond-LW
+dist RI-Pawtucket-RG MD-Columbia-DM
+dist NY-Lake-Placid-LZ TX-Houston-CRC
+dist NY-Greenville-ZG AZ-Phoenix-EH
+dist
+TX-Houston-CRC
+AZ-Phoenix-EH
+invalid_command
+quit

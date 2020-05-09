@@ -1,0 +1,133 @@
+/**********************************************************
+* Proj1
+* Comp 15
+* README
+* Author: Devan Venkataraman
+*********************************************************/
+
+Compile/run:
+     - Compile using
+            make CalcYouLater
+     - run executable with
+            ./CalcYouLater
+
+Program Purpose:
+
+Implement an RPN Calculator. Support a wide range of specified commands
+that in total, resembles the built-in DC calculator. Default takes input from
+cin, but using commands input can be taken from provided files.
+
+Acknowledgements:
+
+Week 1:
+I used the resources provided on the calendar and assignment specs relating
+to i/o streams as it's a topic I really struggle with. I consulted with a
+TA after completing my lab for clarification on how the parseRString function
+should work.
+
+Week 2:
+I went to office hours several times with questions and occasional bugs.
+My main obstacle in this project was the functionality of my "file" command.
+The TA helped me realize that using eof() wasn't correctly ending loops for
+reading from both a string stream and a file stream. I consulted
+an online resource to figure out how to send cerr, not just cout,
+to an outfile as a part of my testing progress. I also consulted
+online resources again for file i/o information and I finally have a good
+understanding how to work with and between different streams. Finally want
+to thank my family for dealing with me complaining through this whole
+assignment.
+
+Files:
+
+DatumStack.cpp
+    Implementation of the DatumStack class. Includes the following functions:
+    isEmpty, clear, size, top, pop, push. These functions will be utilized in
+    the RPN Calculator in the coming week.
+
+DatumStack.h
+    Interface of the DatumStack class.
+
+RPNCalc.cpp
+    Implementation of the RPNCalc class. Handles all queries as specified
+    by assignment. Clarification for fieldQuery functions. There are 3
+    fieldQuery functions, each for a different input source. The first is cin,
+    second is a string stream, third is file stream. Each takes in the input
+    until there is no more input or the command is quit, so the program can
+    be quit from any input source. Each handles the "{ " function, as it
+    depends on the input source. If the command is not either of the two,
+    each calls the same fieldMostQueries function. This, along with
+    fieldMostQueries2 and fieldMostQueries3 handle ALL of the remaining
+    queries, and are divided in order to shorten the function lengths. Each
+    command corresponds with a command-supporting function, each's
+    functionality and use explained in the RPNCalc.cpp file.
+
+RPNCalc.h
+    Interface of the RPNCalc class. Includes only 3 public members: a
+    constructor, destructor, and the run() function.
+
+testDatumStack.cpp
+    Test file for the DatumStack class. Tests each written function of
+    DatumStack class for various cases, including nonempty and empty vectors.
+    Ensures that exceptions are thrown where necessary.
+
+testRPNCalc.cpp
+    Test file for the RPNCalc class. LARGELY UNUSED. Used initially to set
+    up RPNCalc class and test constructor / destructor. Also used to test
+    run() function initially. After beginning to implement commands, I switched
+    to using .cylc files as I could diff against the reference program.
+
+The following test files:
+    Note: Each is a .cyl file which was then compiled
+    to remove the comments into .cylc files. Any needed description of what
+    the test file checks for is included as % comments. For the TAs to be
+    able to understand the functionality of each test file, the
+    .txt file is included rather than the .cylc file.
+
+    testClear.cyl
+    testComparison.cyl
+    testDrop.cyl
+    testDup.cyl
+    testExec.cyl
+    testIf.cyl
+    testMASTER.cyl
+    testNot.cyl
+    testOperate.cyl
+    testPushBool.cyl
+    testQuit.cyl
+    testSwap.cyl
+
+Data Structures:
+    The data structure for this project is composed of 3 classes:
+
+    A Datum class, which was not given to us. The functionality of the class
+    was relayed to us via the spec. The Datum class stores either an int,
+    bool, or rString.
+
+    A DatumStack class, which is composed of a vector of Datum. The
+    class's functionality is described in the DatumStack.cpp file
+    description
+
+Testing:
+    I chose to test the vast majority of the program via .cyl files. As stated,
+    the required testRPNCalc.cpp file was only used to initially create and
+    test a blank RPNCalc class, and to test an empty run() function. I chose
+    to use .cyl files because we were provided with a reference program,
+    which meant that we could diff our outputs against a reference-based
+    "ground truth". Each .cyl file includes comments that explain what the
+    purpose of the commands or the expected outcome or exception that should
+    (and did) result. For the diff process, I used the commands:
+
+    ./CalcYouLater < test_file.cyl > & test_file.out
+    ./theCalcYouLater < test_file.cyl > & test_file.gt
+    diff test_file.out test_file.gt
+
+    repeating this process for each file. I included the & in order to
+    include cerr statements in the .out and .gt to ensure that my exceptions
+    were working as intended. Finally, I created the testMASTER.txt file which
+    would run all of my test files, then diffed this against the reference
+    program.
+
+    TO RECREATE MY TESTING PROCESS: Run the executable ./cylc test_file.cyl
+    to create the respective test_file.cylc file. Only once this has been done
+    for all included test files may the testMASTER.cyl file be used for a
+    diff of all test files at once.

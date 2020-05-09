@@ -1,0 +1,84 @@
+
+A. TITLE + AUTHOR:
+
+COMP 15 HW 2 Cheshire ConCATenation - Time to Get Linked Up in Fur
+Author: Devan Venkataraman
+
+B. PURPOSE
+
+The purpose of this program is to create a character doubly linked list class
+that supports a wide variety of functions that resembles the array list
+built into c++. These functions are meant to support the client and
+also report errors in their usage.
+
+C. ACKNOWLEDGEMENTS
+
+In this assignment, I consulted TA's at office hours once mainly to troubleshoot
+minor pointer issues that were leading to seg faults. I also consulted my COMP
+11 homework assignments as a reminder of class syntax and re-familiarize
+myself with some general OOP principles.
+
+D. FILES
+
+CharLinkedList.cpp - Interface of the CharArrayList Class
+
+CharLinkedList.cpp - Implementation of the CharLinkedList Class. Includes
+4 total constructors, destructor, assignment operation, and the rest of
+the assignment-outlined functions that manipulate the CharLinkedList.
+Also includes 1 private member function: scanList
+
+testCharLinkedList.cpp - Test code for the CharLinkedList class. Includes
+tests for all public member functions. Those functions with exceptions
+and / or possible edge cases are tested against appropriately and
+described more in depth in the testing section below.
+
+E. COMPILE / RUN
+
+The program is compiled by including the CharLinkedList.cpp file. The
+testCharLinkedList.cpp file may also be included if the user would like
+to test any of the functions. The program takes no user input.
+
+F. DATA STRUCTURES
+
+The data structure is a doubly linked list. It has the advantage of
+having several functions that can manipulate the list. It's
+disadvantages include quitting upon an error in its usage and
+any limitations to its functional abilities.
+
+G. TESTING
+
+The testing was broken into two groups as to limit the length of the
+main function in the testCharLinkedList.cpp file. The first group tests
+both cases of the isEmpty function, first and last functions as used
+normally and when triggering their runtime_error exceptions, elementAt
+as used normally and its out_of_range exception, and both the pushAtBack
+and pushAtFront functions.
+
+The second function test group tests the insertAt function inserting
+an element into the middle of the list, at the end, and triggering its
+exception. It also tests it with an empty list. It tests the insertInOrder
+function both with insertions into the middle and end of the list as well.
+It tests popFromFront and popFromBack with both normal cases and triggering
+their runtime_error exceptions. It tests the removeAt and replaceAt
+functions both normally and with their respective out_of_range exceptions.
+It tests concatenate by concatenating a standard list to an empty list, and an
+empty list to a standard list. Finally it tests shrink to shorten the array
+to the minimum capacity necessary, but lists always use minimal space.
+
+H. ADDITIONAL QUESTIONS
+
+Q1: Which functions in the interface were easier to implement
+    for linked lists compared to sequences?  Why?
+        - The functions that added elements were simple (especially to the
+        beginning or end) because it does not require maintenance of a
+        capacity as an array list does.
+Q2: Which functions in the interface were harder to implement
+    for linked lists compared to sequences?  Why?
+        - All removal functions were difficult because it required a lot
+          of pointer maintenance and consideration of several edge cases.
+Q3: If a client had an existing program that uses
+    CharArrayLists, what changes would they have to make to
+    their code to switch to CharLinkedLists?
+        - The client shouldn't have to change anything, our Implementation
+          is designed to take the exact same inputs, it just stores and
+          edits the data in different ways.

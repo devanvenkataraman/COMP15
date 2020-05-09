@@ -1,0 +1,7 @@
+drop % should throw empty exception
+4
+5
+drop
+print % should print 4
+drop
+print % should throw empty exception

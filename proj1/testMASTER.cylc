@@ -1,0 +1,26 @@
+{ testPushBool.cylc }
+file
+{ testNot.cylc }
+file
+{ testClear.cylc }
+file
+{ testDrop.cylc }
+file
+{ testDup.cylc }
+file
+{ testSwap.cylc }
+file
+{ testOperate.cylc }
+file
+{ testComparison.cylc }
+file
+{ testExec.cylc }
+file
+{ testIf.cylc }
+file
+clear
+file
+{ doesntExist.cylc }
+file
+{ testQuit.cylc }
+file

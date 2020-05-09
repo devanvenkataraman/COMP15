@@ -1,0 +1,16 @@
+exec % should throw empty exception
+{ 4 }
+exec % should work
+print
+{ hello }
+exec % hello should be unimplemented
+clear
+4
+5
+6
+{ - { + } }
+exec
+exec
+print
+{      5        7     -  print } % test that it (and parse) works w spacing
+exec

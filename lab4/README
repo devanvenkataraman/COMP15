@@ -1,0 +1,27 @@
+/**********************************************************
+* Lab 4: Excursion to Recursion
+* Comp 15 Fall 2019
+* README
+* Author: Devan Venkataraman
+*********************************************************/
+
+Program Purpose: This lab assignment is to learn about Recursion. The point
+of the program is to solve a generated maze by displaying the correct path.
+
+
+Acknowledgements: I asked TA's a couple questions about my progress and
+my base cases
+
+Run command: Run executable with "./mazeSolver"
+
+Files:
+
+maze.cpp: Implementation of the maze class. Includes several solve
+functions, not all are completed.
+
+maze.h: Header file for maze class
+
+Testing:
+I tested the program with mazes of several different sizes. I was
+unable to finish the count with length functions, but I was able
+to have the TA show me his solution so that I understood its recursion.

@@ -1,0 +1,59 @@
+% should all throw empty exceptions
+<
+>
+>=
+<=
+==
+4
+<
+>
+>=
+<=
+==
+
+% handle some standard int cases
+clear
+4
+5
+<
+print
+6
+6
+<=
+7
+7
+==
+6
+7
+>=
+
+% handle bool cases, SHOULD NOT throw exceptions
+clear
+#t
+#f
+==
+print
+clear
+#f
+#f
+==
+print
+clear
+
+% handle rString cases, SHOULD NOT throw exceptions
+{ hello }
+{ hello }
+==
+print % should be true
+clear
+{ hi }
+{ hello }
+==
+print % should be false
+
+% handle cross type case, SHOULD NOT throw exception
+clear
+#t
+{ hi }
+==
+print % should be false
